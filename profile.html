@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хувийн мэдээлэл - Japan Market</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="profile_styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="profile-header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="back-btn" onclick="goBack()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Буцах
+                </button>
+                <h1>👤 Хувийн мэдээлэл</h1>
+            </div>
+            <div class="header-right">
+                <span class="user-greeting">Сайн байна уу, <strong id="headerUserName">Болд</strong></span>
+                <button class="logout-btn" onclick="logout()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Гарах
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="profile-main">
+        <div class="container">
+            <!-- Profile Header Banner -->
+            <div class="profile-header-banner">
+                <div class="profile-header-content">
+                    <div class="profile-avatar-section">
+                        <div class="profile-avatar-wrapper">
+                            <img src="https://i.pravatar.cc/150?img=68" alt="Profile" id="profilePhoto">
+                            <button class="avatar-edit-btn" onclick="changeProfilePhoto()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="profile-name-section">
+                            <h2 id="profileName">Болд Б.</h2>
+                            <p id="profileEmail">bold@email.com</p>
+                            <div class="profile-badges">
+                                <span class="verified-badge">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    Баталгаажсан
+                                </span>
+                                <span class="member-badge">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                    </svg>
+                                    Гишүүн: 2024
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Захиалга</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">Хадгалсан</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">4.8</div>
+                                <div class="stat-label">Үнэлгээ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Form -->
+            <div class="profile-container">
+                <form class="profile-form" onsubmit="saveProfile(event)">
+                    <!-- Basic Info Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <h3>Үндсэн мэдээлэл</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Овог нэр *
+                                    </label>
+                                    <input type="text" name="fullName" placeholder="Жишээ: Болд Батаа" value="Болд Б." required>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                        </svg>
+                                        Утасны дугаар *
+                                    </label>
+                                    <input type="tel" name="phone" placeholder="+976 9999-9999" value="+976 9999-9999" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                        И-мэйл хаяг *
+                                    </label>
+                                    <input type="email" name="email" placeholder="example@email.com" value="bold@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        Төрсөн огноо
+                                    </label>
+                                    <input type="date" name="birthdate" value="1990-01-01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <h3>Хаяг мэдээлэл</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        Хот/Аймаг *
+                                    </label>
+                                    <select name="city" required>
+                                        <option value="">Сонгох</option>
+                                        <option value="УБ" selected>Улаанбаатар</option>
+                                        <option value="Дархан">Дархан</option>
+                                        <option value="Эрдэнэт">Эрдэнэт</option>
+                                        <option value="Хөвсгөл">Хөвсгөл</option>
+                                        <option value="Завхан">Завхан</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Дүүрэг/Сум *
+                                    </label>
+                                    <select name="district" required>
+                                        <option value="">Сонгох</option>
+                                        <option value="БГД">Баянгол</option>
+                                        <option value="СБД" selected>Сүхбаатар</option>
+                                        <option value="ХУД">Хан-Уул</option>
+                                        <option value="ЧД">Чингэлтэй</option>
+                                        <option value="БЗД">Баянзүрх</option>
+                                        <option value="СХД">Сонгинохайрхан</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    </svg>
+                                    Дэлгэрэнгүй хаяг *
+                                </label>
+                                <input type="text" name="address" placeholder="Хороо, байр, тоот, давхар, орц..." value="3-р хороо, 15-р байр" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                    Нэмэлт хаяг
+                                </label>
+                                <input type="text" name="address2" placeholder="Нэмэлт хаяг мэдээлэл">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saved Addresses Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <h3>Хадгалсан хаягууд</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="saved-addresses-list" id="savedAddressesList">
+                                <div class="address-item default-address">
+                                    <div class="address-header">
+                                        <div class="address-type">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            </svg>
+                                            <strong>Гэр</strong>
+                                        </div>
+                                        <span class="default-badge">Үндсэн</span>
+                                    </div>
+                                    <div class="address-content">
+                                        <p>Болд Б.</p>
+                                        <p>+976 9999-9999</p>
+                                        <p>Улаанбаатар, Сүхбаатар дүүрэг, 3-р хороо, 15-р байр</p>
+                                    </div>
+                                    <div class="address-actions">
+                                        <button type="button" class="addr-btn-edit" onclick="editAddress(0)">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            Засах
+                                        </button>
+                                        <button type="button" class="addr-btn-delete" onclick="deleteAddress(0)">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="3 6 5 6 21 6"></polyline>
+                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            </svg>
+                                            Устгах
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add-address" onclick="openAddAddressModal()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Шинэ хаяг нэмэх
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Reward Points Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                            <h3>Урамшууллын оноо</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="points-summary">
+                                <div class="points-display">
+                                    <div class="points-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                        </svg>
+                                    </div>
+                                    <div class="points-info">
+                                        <div class="points-value">2,450</div>
+                                        <div class="points-label">Нийт оноо</div>
+                                    </div>
+                                </div>
+                                <div class="points-expiry">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <p>500 оноо 30 хоногийн дараа дуусна</p>
+                                </div>
+                            </div>
+
+                            <div class="points-progress">
+                                <div class="progress-header">
+                                    <span>Дараагийн түвшин хүртэл</span>
+                                    <span><strong>550</strong> оноо</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                                <div class="next-level">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                    </svg>
+                                    Алт түвшинд шилжих
+                                </div>
+                            </div>
+
+                            <div class="points-benefits">
+                                <h4>Онооны ашиглалт</h4>
+                                <div class="benefit-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>100 оноо = 1,000₮ хөнгөлөлт</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Захиалга бүрт 5% буцаан оноо</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Төрсөн өдөр бонус 500 оноо</span>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-points-history" onclick="showPointsHistory()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Оноо түүх харах
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Interests Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                            <h3>Сонирхлын чиглэл</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="interest-tags">
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest" value="electronics">
+                                    <span>📱 Электроникс</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest" value="fashion">
+                                    <span>👕 Хувцас</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest" value="auto">
+                                    <span>🚗 Автомашин</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest" value="home">
+                                    <span>🏠 Гэр ахуй</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest" value="hobby">
+                                    <span>🎮 Хобби</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interest" value="beauty">
+                                    <span>💄 Гоо сайхан</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <h3>Мэдэгдлийн тохиргоо</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="notification-settings">
+                                <div class="notif-section">
+                                    <h4>📧 И-мэйл мэдэгдэл</h4>
+                                    <div class="notif-item">
+                                        <div class="notif-info">
+                                            <strong>Захиалгын мэдээлэл</strong>
+                                            <p>Захиалга, хүргэлтийн мэдээлэл хүлээн авах</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notif-item">
+                                        <div class="notif-info">
+                                            <strong>Хямдрал, урамшуулал</strong>
+                                            <p>Онцгой санал, хөнгөлөлтийн мэдээлэл</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notif-item">
+                                        <div class="notif-info">
+                                            <strong>Шинэ бүтээгдэхүүн</strong>
+                                            <p>Шинэ бараа нэмэгдсэн тухай мэдэгдэх</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="notif-section">
+                                    <h4>📱 SMS мэдэгдэл</h4>
+                                    <div class="notif-item">
+                                        <div class="notif-info">
+                                            <strong>Хүргэлтийн мэдэгдэл</strong>
+                                            <p>Хүргэгч хаяганд ойртох үед мэдэгдэх</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notif-item">
+                                        <div class="notif-info">
+                                            <strong>Баталгаажуулалт</strong>
+                                            <p>Нэвтрэх, нууц үг солих үед код илгээх</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="notif-section">
+                                    <h4>🔔 Browser мэдэгдэл</h4>
+                                    <div class="notif-item">
+                                        <div class="notif-info">
+                                            <strong>Push notification</strong>
+                                            <p>Вэб хөтчөөр шууд мэдэгдэл авах</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <h3>Нууцлал & Аюулгүй байдал</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="security-section">
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                            <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                                        </svg>
+                                        <div>
+                                            <strong>Нууц үг солих</strong>
+                                            <p>Сүүлд солигдсон: 30 хоногийн өмнө</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="security-btn" onclick="changePassword()">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                        </svg>
+                                        Солих
+                                    </button>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                        </svg>
+                                        <div>
+                                            <strong>Хоёр үе шаттай баталгаажуулалт</strong>
+                                            <p>Нэмэлт аюулгүй байдал</p>
+                                        </div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="security-item">
+                                    <div class="security-info">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        <div>
+                                            <strong>Нэвтрэх түүх</strong>
+                                            <p>Сүүлд нэвтэрсэн: Өнөөдөр 14:30</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="security-btn" onclick="viewLoginHistory()">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        Харах
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-reset" onclick="resetProfile()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <polyline points="23 20 23 14 17 14"></polyline>
+                                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+                            </svg>
+                            Буцаах
+                        </button>
+                        <button type="submit" class="btn-save">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                <polyline points="7 3 7 8 15 8"></polyline>
+                            </svg>
+                            ХАДГАЛАХ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Login History Modal -->
+    <div id="loginHistoryModal" class="modal">
+        <div class="modal-content login-history-modal">
+            <div class="login-history-header">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Нэвтрэх түүх
+                </h2>
+                <button class="modal-close-btn" onclick="closeLoginHistory()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="login-history-stats">
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h4 id="totalLogins">24</h4>
+                        <p>Нийт нэвтэрсэн</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon active">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h4 id="activeDevices">3</h4>
+                        <p>Идэвхтэй төхөөрөмж</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon warning">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h4 id="failedAttempts">0</h4>
+                        <p>Амжилтгүй оролдлого</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-history-content">
+                <div class="history-filters">
+                    <button class="filter-btn active" onclick="filterHistory('all')">Бүгд</button>
+                    <button class="filter-btn" onclick="filterHistory('success')">Амжилттай</button>
+                    <button class="filter-btn" onclick="filterHistory('failed')">Амжилтгүй</button>
+                </div>
+
+                <div id="loginHistoryList" class="history-list">
+                    <!-- History items will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <div class="login-history-footer">
+                <button class="btn-secondary" onclick="exportLoginHistory()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Татаж авах
+                </button>
+                <button class="btn-danger" onclick="clearLoginHistory()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                    Түүх арилгах
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile_script.js"></script>
+</body>
+</html>

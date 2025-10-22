@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Япон улсаас хуучин бараа шууд Монголд. Электроникс, хувцас, автомашины эд анги, гэр ахуй">
+    <meta name="keywords" content="япон бараа, secondhand, хуучин бараа, iPhone, Toyota, Uniqlo">
+    <title>🇯🇵 Japan Market - Япон бараа Монголд</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="japan_styles.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>🇯🇵 JAPAN <span class="highlight">MARKET</span></h1>
+                <p class="tagline">Япон бараа шууд Монголд</p>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">НҮҮР</a></li>
+                <li><a href="#categories">АНГИЛАЛ</a></li>
+                <li><a href="#products">БАРАА</a></li>
+                <li><a href="#how-it-works">ХЭРХЭН АЖИЛЛАДАГ</a></li>
+                <li><a href="#contact">ХОЛБОО БАРИХ</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="search-btn tool-btn" onclick="openSearchModal()" title="Хайлт">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <span class="tool-label">Хайх</span>
+                </button>
+                <button class="wishlist-nav-btn tool-btn" onclick="openWishlistModal()" title="Хүсэл жагсаалт">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="wishlist-count">0</span>
+                    <span class="tool-label">Хадгалсан</span>
+                </button>
+                <button class="cart-btn tool-btn" onclick="openCartModal()" title="Сагс">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                    <span class="tool-label">Сагс</span>
+                </button>
+                <button class="user-btn tool-btn" onclick="openAuthModal()" title="Хэрэглэгч">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="tool-label" id="userLabel">Нэвтрэх</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">🎌 ШУУД ЯПОНООС</span>
+                <h1 class="hero-title">
+                    ЯПОН УЛСЫН<br>
+                    <span class="highlight-gradient">ЧАНАРТАЙ БАРАА</span><br>
+                    МОНГОЛ ХҮРТЭЛ
+                </h1>
+                <p class="hero-description">
+                    📱 Электроникс • 👕 Хувцас • 🚗 Автомашин • 🏠 Гэр ахуй • 🎮 Хобби
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>5000+</h3>
+                        <p>Бараа нийлүүлсэн</p>
+                    </div>
+                    <div class="stat">
+                        <h3>2000+</h3>
+                        <p>Сэтгэл ханамжтай үйлчлүүлэгч</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Баталгаатай</p>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary">🛍️ БАРАА ҮЗЭХ</button>
+                    <button class="btn-secondary">📞 ХОЛБОГДОХ</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?w=400" alt="Japan">
+                    <div class="card-badge">✨ Premium Quality</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scrolling Banner -->
+        <div class="scroll-banner">
+            <div class="scroll-content">
+                <span>🇯🇵 ЯПОН ЧАНАР</span>
+                <span>✓ 100% ЖИНХЭНЭ</span>
+                <span>📦 НАЙДВАРТАЙ ХҮРГЭЛТ</span>
+                <span>💰 ХЯМД ҮНЭ</span>
+                <span>🔒 БАТАЛГААТАЙ</span>
+                <span>🇯🇵 ЯПОН ЧАНАР</span>
+                <span>✓ 100% ЖИНХЭНЭ</span>
+                <span>📦 НАЙДВАРТАЙ ХҮРГЭЛТ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <h2 class="section-title">📋 БАРААНЫ АНГИЛАЛ</h2>
+        <p class="section-subtitle">Япон улсаас шууд авчирсан өндөр чанарын бараа</p>
+        
+        <div class="categories-grid">
+            <div class="category-card" data-category="electronics">
+                <div class="category-icon">📱</div>
+                <h3>Электроникс</h3>
+                <p>Утас, камер, laptop</p>
+                <span class="item-count">250+ бараа</span>
+            </div>
+            
+            <div class="category-card" data-category="fashion">
+                <div class="category-icon">👕</div>
+                <h3>Хувцас & Загвар</h3>
+                <p>Брэнд хувцас, гутал</p>
+                <span class="item-count">800+ бараа</span>
+            </div>
+            
+            <div class="category-card" data-category="auto">
+                <div class="category-icon">🚗</div>
+                <h3>Автомашин</h3>
+                <p>Сэлбэг, дугуй, log</p>
+                <span class="item-count">1500+ бараа</span>
+            </div>
+            
+            <div class="category-card" data-category="home">
+                <div class="category-icon">🏠</div>
+                <h3>Гэр ахуй</h3>
+                <p>Цахилгаан, тавилга</p>
+                <span class="item-count">600+ бараа</span>
+            </div>
+            
+            <div class="category-card" data-category="hobby">
+                <div class="category-icon">🎮</div>
+                <h3>Хобби & Спорт</h3>
+                <p>Game, аниме, спорт</p>
+                <span class="item-count">400+ бараа</span>
+            </div>
+            
+            <div class="category-card" data-category="beauty">
+                <div class="category-icon">💄</div>
+                <h3>Гоо сайхан</h3>
+                <p>Япон косметик</p>
+                <span class="item-count">300+ бараа</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">🛍️ ОНЦЛОХ БАРАА</h2>
+                <p class="section-subtitle">Шинээр ирсэн японы чанартай бараа</p>
+            </div>
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">БҮГД</button>
+                <button class="tab-btn" data-filter="electronics">📱 ЭЛЕКТРОНИКС</button>
+                <button class="tab-btn" data-filter="fashion">👕 ХУВЦАС</button>
+                <button class="tab-btn" data-filter="auto">🚗 АВТО</button>
+                <button class="tab-btn" data-filter="home">🏠 ГЭР АХУЙ</button>
+                <button class="tab-btn" data-filter="hobby">🎮 ХОББИ</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsContainer">
+            <!-- Products will be loaded from API -->
+            <div class="loading">⏳ Бараа ачааллаж байна...</div>
+        </div>
+
+        <div class="load-more-container">
+            <button class="btn-secondary load-more">ИЛҮҮ ИХ БАРАА ҮЗЭХ</button>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">🔄 ХЭРХЭН АЖИЛЛАДАГ</h2>
+        <p class="section-subtitle">4 хялбар алхмаар японоос бараа авах</p>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">🔍</div>
+                <h3>Бараа хайх</h3>
+                <p>Вэб сайт дээрээс өөрт таалагдсан япон бараагаа хайж олоорой</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">🛒</div>
+                <h3>Захиалга өгөх</h3>
+                <p>Сагсанд нэмээд захиалга өгнө. Манай баг таны барааг Японоос худалдаж авна</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">✈️</div>
+                <h3>Тээвэрлэлт</h3>
+                <p>Бид таны барааг найдвартай, аюулгүйгээр Монгол руу тээвэрлэнэ (7-14 хоног)</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-icon">📦</div>
+                <h3>Хүлээн авах</h3>
+                <p>Бараагаа гэртээ хүлээн аваад шалгаарай. 100% баталгаатай!</p>
+            </div>
+        </div>
+
+        <div class="guarantee-section">
+            <div class="guarantee-card">
+                <span class="guarantee-icon">✓</span>
+                <h4>100% Жинхэнэ бараа</h4>
+                <p>Япон улсын албан ёсны дэлгүүрүүдээс</p>
+            </div>
+            <div class="guarantee-card">
+                <span class="guarantee-icon">🔒</span>
+                <h4>Баталгаатай</h4>
+                <p>Бүх барааны чанарыг баталгаажуулна</p>
+            </div>
+            <div class="guarantee-card">
+                <span class="guarantee-icon">💰</span>
+                <h4>Хямд үнэ</h4>
+                <p>Дунд зуучийн зардалгүй, шууд үнэ</p>
+            </div>
+            <div class="guarantee-card">
+                <span class="guarantee-icon">📞</span>
+                <h4>24/7 Дэмжлэг</h4>
+                <p>Аливаа асуултад хариулна</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">💬 ҮЙЛЧЛҮҮЛЭГЧИЙН СЭТГЭГДЭЛ</h2>
+        <p class="section-subtitle">Бидэнтэй хамтран ажилласан хүмүүс юу гэж хэлдэг вэ</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Customer">
+                    <div>
+                        <h4>Болд Б.</h4>
+                        <p>iPhone 13 Pro худалдаж авсан</p>
+                    </div>
+                </div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "Маш сайн үйлчилгээ! iPhone-оо 2 долоо хоногт л авсан. Бараа яг л шинэ байсан. Үнэ нь бусад газраас 30% хямд байлаа. Баярлалаа! 🙏"
+                </p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="Customer">
+                    <div>
+                        <h4>Сарнай Д.</h4>
+                        <p>Sony камер авсан</p>
+                    </div>
+                </div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "Photographer хүн болохоор чанартай камер хэрэгтэй байсан. Japan Market-аас авсан A7 III маш сайн! Баярлалаа! 📸"
+                </p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://i.pravatar.cc/100?img=33" alt="Customer">
+                    <div>
+                        <h4>Баяр Т.</h4>
+                        <p>Toyota сэлбэг авсан</p>
+                    </div>
+                </div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "Машины сэлбэг хүссэн байсан. Японоос original эд анги авчирдаг нь маш их таалагдлаа. Үнэ ч хямд! 🚗"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>📞 ХОЛБОО БАРИХ</h2>
+                <p>Асуулт байвал бидэнтэй холбогдоорой!</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>+976 9999-9999</p>
+                            <p>+976 8888-8888</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>И-мэйл</h4>
+                            <p>info@japanmarket.mn</p>
+                            <p>support@japanmarket.mn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Хаяг</h4>
+                            <p>Улаанбаатар хот, СБД</p>
+                            <p>Токио хот, Шинжүкү (Япон салбар)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <h4>Цаг</h4>
+                            <p>Даваа-Баасан: 09:00-18:00</p>
+                            <p>Бямба: 10:00-16:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-btn">📘 Facebook</a>
+                    <a href="#" class="social-btn">📷 Instagram</a>
+                    <a href="#" class="social-btn">💬 Telegram</a>
+                    <a href="#" class="social-btn">📞 WhatsApp</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Мессеж илгээх</h3>
+                <form id="contactForm">
+                    <input type="text" placeholder="Нэр" required>
+                    <input type="email" placeholder="И-мэйл" required>
+                    <input type="tel" placeholder="Утас" required>
+                    <select required>
+                        <option value="">Ангилал сонгох</option>
+                        <option value="electronics">📱 Электроникс</option>
+                        <option value="fashion">👕 Хувцас</option>
+                        <option value="auto">🚗 Авто</option>
+                        <option value="home">🏠 Гэр ахуй</option>
+                        <option value="hobby">🎮 Хобби</option>
+                    </select>
+                    <textarea placeholder="Таны мессеж..." rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">📤 ИЛГЭЭХ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>🇯🇵 JAPAN <span class="highlight">MARKET</span></h3>
+                <p>Япон улсын чанартай бараа шууд Монгол хүртэл. Найдвартай, баталгаатай үйлчилгээ.</p>
+                <div class="payment-methods">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>📱</span>
+                    <span>💰</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Бараа</h4>
+                <a href="#">📱 Электроникс</a>
+                <a href="#">👕 Хувцас</a>
+                <a href="#">🚗 Автомашин</a>
+                <a href="#">🏠 Гэр ахуй</a>
+                <a href="#">🎮 Хобби</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Тусламж</h4>
+                <a href="#">❓ Түгээмэл асуулт</a>
+                <a href="#">📦 Хүргэлт</a>
+                <a href="#">🔄 Буцаалт</a>
+                <a href="#">💳 Төлбөр</a>
+                <a href="#">📞 Холбогдох</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Мэдээлэл авах</h4>
+                <p>Шинэ бараа, хөнгөлөлтийн мэдээлэл авах</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="И-мэйл хаяг">
+                    <button>📧</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Japan Market Mongolia. Бүх эрх хуулиар хамгаалагдсан.</p>
+            <div class="footer-links">
+                <a href="#">Үйлчилгээний нөхцөл</a>
+                <a href="#">Нууцлалын бодлого</a>
+                <a href="#">Буцаалтын бодлого</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>🛒 Таны сагс</h2>
+            
+            <div id="cartItems">
+                <p class="empty-cart">Таны сагс хоосон байна</p>
+            </div>
+            
+            <!-- Promo Code Section -->
+            <div class="promo-section" id="promoSection" style="display: none;">
+                <h3>🎫 Хөнгөлөлтийн код</h3>
+                <div class="promo-input-group">
+                    <input type="text" id="promoCode" placeholder="Код оруулах (жишээ: SALE20)">
+                    <button class="btn-promo" onclick="applyPromoCode()">✓ Баталгаажуулах</button>
+                </div>
+                <div id="promoMessage" class="promo-message"></div>
+                <div class="promo-suggestions">
+                    <small>💡 Боломжит кодууд: <span class="promo-tag" onclick="applyPromo('SALE20')">SALE20</span> 
+                    <span class="promo-tag" onclick="applyPromo('NEWUSER')">NEWUSER</span> 
+                    <span class="promo-tag" onclick="applyPromo('FREESHIP')">FREESHIP</span></small>
+                </div>
+            </div>
+            
+            <!-- Delivery Options -->
+            <div class="delivery-section" id="deliverySection" style="display: none;">
+                <h3>🚚 Хүргэлтийн хэлбэр</h3>
+                <div class="delivery-options">
+                    <label class="delivery-option">
+                        <input type="radio" name="delivery" value="standard" checked onchange="updateDelivery()">
+                        <div class="delivery-info">
+                            <strong>📦 Стандарт хүргэлт</strong>
+                            <p>3-5 хоногт / ₮50,000</p>
+                        </div>
+                    </label>
+                    <label class="delivery-option">
+                        <input type="radio" name="delivery" value="express" onchange="updateDelivery()">
+                        <div class="delivery-info">
+                            <strong>⚡ Түргэн шуурхай</strong>
+                            <p>1-2 хоногт / ₮100,000</p>
+                        </div>
+                    </label>
+                    <label class="delivery-option">
+                        <input type="radio" name="delivery" value="pickup" onchange="updateDelivery()">
+                        <div class="delivery-info">
+                            <strong>🏪 Дэлгүүрээс авах</strong>
+                            <p>Өнөөдөр / Үнэгүй</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Saved Addresses -->
+            <div class="address-section" id="addressSection" style="display: none;">
+                <h3>📍 Хүргэх хаяг</h3>
+                <div class="saved-addresses" id="savedAddresses">
+                    <div class="address-card default" onclick="selectAddress(0)">
+                        <div class="address-header">
+                            <input type="radio" name="address" value="0" checked>
+                            <strong>🏠 Гэрийн хаяг</strong>
+                            <span class="default-badge">Үндсэн</span>
+                        </div>
+                        <p>Сүхбаатар дүүрэг, 3-р хороо, 15-р байр, 45 тоот</p>
+                        <p class="address-phone">📞 +976 9999-9999</p>
+                    </div>
+                    <div class="address-card" onclick="selectAddress(1)">
+                        <div class="address-header">
+                            <input type="radio" name="address" value="1">
+                            <strong>💼 Ажлын хаяг</strong>
+                        </div>
+                        <p>Чингэлтэй дүүрэг, Энхтайваны өргөн чөлөө, 14-р байр</p>
+                        <p class="address-phone">📞 +976 8888-8888</p>
+                    </div>
+                </div>
+                <button class="btn-add-address" onclick="openAddAddressModal()">
+                    ➕ Шинэ хаяг нэмэх
+                </button>
+            </div>
+            
+            <!-- Order Notes -->
+            <div class="notes-section" id="notesSection" style="display: none;">
+                <h3>📝 Захиалгын тэмдэглэл</h3>
+                <textarea id="orderNotes" placeholder="Тусгай хүсэлт, бэлэглэлийн мессеж, хүргэлтийн зааварчилгаа..." rows="3"></textarea>
+                <div class="note-options">
+                    <label class="note-checkbox">
+                        <input type="checkbox" id="isGift">
+                        <span>🎁 Энэ бол бэлэг</span>
+                    </label>
+                    <label class="note-checkbox">
+                        <input type="checkbox" id="callBeforeDelivery">
+                        <span>📞 Хүргэхээсээ өмнө залгах</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Currency Selector -->
+            <div class="currency-section" id="currencySection" style="display: none;">
+                <h3>💱 Валют</h3>
+                <div class="currency-selector">
+                    <button class="currency-btn active" data-currency="MNT" onclick="changeCurrency('MNT')">
+                        <span class="currency-symbol">₮</span>
+                        <span>Төгрөг</span>
+                    </button>
+                    <button class="currency-btn" data-currency="JPY" onclick="changeCurrency('JPY')">
+                        <span class="currency-symbol">¥</span>
+                        <span>Иен</span>
+                    </button>
+                    <button class="currency-btn" data-currency="USD" onclick="changeCurrency('USD')">
+                        <span class="currency-symbol">$</span>
+                        <span>Доллар</span>
+                    </button>
+                    <button class="currency-btn" data-currency="KRW" onclick="changeCurrency('KRW')">
+                        <span class="currency-symbol">₩</span>
+                        <span>Вон</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="cart-summary" id="cartSummarySection" style="display: none;">
+                <h3>💰 Төлбөрийн дэлгэрэнгүй</h3>
+                <div class="summary-breakdown">
+                    <div class="summary-row">
+                        <span>Барааны үнэ:</span>
+                        <span id="subtotal">₮0</span>
+                    </div>
+                    <div class="summary-row" id="discountRow" style="display: none;">
+                        <span>🎫 Хөнгөлөлт (<span id="discountPercent">0%</span>):</span>
+                        <span id="discountAmount" class="discount-text">-₮0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>🚚 Хүргэлт:</span>
+                        <span id="shipping">₮50,000</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row total">
+                        <span><strong>Нийт төлөх:</strong></span>
+                        <span id="totalPrice" class="total-price">₮50,000</span>
+                    </div>
+                    <div class="summary-row yen">
+                        <span>Yen-ээр:</span>
+                        <span id="totalYen">¥0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="cart-actions" id="cartActions" style="display: none;">
+                <button class="btn-secondary" onclick="moveToWishlist()">❤️ WISHLIST РУУ</button>
+                <button class="btn-secondary" onclick="clearCart()">🗑️ ХООСЛОХ</button>
+                <button class="btn-primary checkout-btn" onclick="openPaymentModal()">💳 ТӨЛБӨР ТӨЛӨХ</button>
+            </div>
+            
+            <!-- Related Products -->
+            <div class="cart-recommendations" id="cartRecommendations" style="display: none;">
+                <h3>🎁 Танд санал болгох</h3>
+                <div class="recommendations-grid" id="recommendationsGrid"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Address Modal -->
+    <div id="addAddressModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeAddAddressModal()">&times;</span>
+            <h2>➕ Шинэ хаяг нэмэх</h2>
+            <form onsubmit="saveNewAddress(event)" class="address-form">
+                <div class="form-group">
+                    <label>Хаягийн нэр *</label>
+                    <input type="text" name="addressName" placeholder="Жишээ: Гэр, Ажил, Эх" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Хот/Аймаг *</label>
+                        <select name="city" required>
+                            <option value="">Сонгох</option>
+                            <option value="УБ">Улаанбаатар</option>
+                            <option value="Дархан">Дархан</option>
+                            <option value="Эрдэнэт">Эрдэнэт</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Дүүрэг/Сум *</label>
+                        <select name="district" required>
+                            <option value="">Сонгох</option>
+                            <option value="БГД">Баянгол</option>
+                            <option value="СБД">Сүхбаатар</option>
+                            <option value="ХУД">Хан-Уул</option>
+                            <option value="ЧД">Чингэлтэй</option>
+                            <option value="БЗД">Баянзүрх</option>
+                            <option value="СХД">Сонгинохайрхан</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Дэлгэрэнгүй хаяг *</label>
+                    <input type="text" name="detailedAddress" placeholder="Хороо, байр, тоот..." required>
+                </div>
+                <div class="form-group">
+                    <label>Утасны дугаар *</label>
+                    <input type="tel" name="phone" placeholder="+976 9999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="setDefault">
+                        <span>Үндсэн хаяг болгох</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">💾 ХАДГАЛАХ</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content quick-view-content">
+            <span class="close-modal" onclick="closeQuickView()">&times;</span>
+            <div class="quick-view-container">
+                <div class="quick-view-image">
+                    <img id="quickViewImage" src="" alt="Product">
+                </div>
+                <div class="quick-view-info">
+                    <h2 id="quickViewName"></h2>
+                    <div class="quick-view-rating">
+                        <span class="stars" id="quickViewStars"></span>
+                        <span id="quickViewReviews"></span>
+                    </div>
+                    <div class="quick-view-price">
+                        <span class="current-price" id="quickViewPrice"></span>
+                        <span class="old-price" id="quickViewOldPrice"></span>
+                    </div>
+                    <p class="quick-view-description" id="quickViewDesc"></p>
+                    <div class="quick-view-details">
+                        <div class="detail-item">
+                            <strong>📦 Байршил:</strong>
+                            <span id="quickViewLocation"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>📊 Үлдэгдэл:</strong>
+                            <span id="quickViewStock"></span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>✨ Байдал:</strong>
+                            <span id="quickViewCondition"></span>
+                        </div>
+                    </div>
+                    <div class="quick-view-actions">
+                        <button class="btn-secondary" onclick="openProductDetailFromQuick()">📄 Дэлгэрэнгүй</button>
+                        <button class="btn-primary" onclick="addToCartFromQuick()">🛒 САГСЛАХ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal close-product">&times;</span>
+            <div class="product-detail-container">
+                <div class="product-gallery">
+                    <div class="main-product-image">
+                        <img id="mainImage" src="" alt="Product">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img class="thumbnail active" src="" alt="View 1">
+                        <img class="thumbnail" src="" alt="View 2">
+                        <img class="thumbnail" src="" alt="View 3">
+                        <img class="thumbnail" src="" alt="View 4">
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <h2 id="modalProductName"></h2>
+                    <div class="modal-rating">
+                        <span class="stars" id="modalStars"></span>
+                        <span class="review-count" id="modalReviews"></span>
+                    </div>
+                    <div class="modal-tags">
+                        <span class="tag used">ХУУЧИН</span>
+                        <span class="tag japan">🇯🇵 ЯПОН</span>
+                        <span class="tag guarantee">✓ БАТАЛГААТАЙ</span>
+                    </div>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <div class="modal-price">
+                        <span class="modal-old-price" id="modalOldPrice"></span>
+                        <span class="modal-current-price" id="modalCurrentPrice"></span>
+                    </div>
+                    <div class="product-specifications">
+                        <h4>📋 Техникийн үзүүлэлт:</h4>
+                        <ul id="specsList">
+                            <li>✓ Гарал үүсэл: Япон</li>
+                            <li>✓ Нөхцөл: Excellent</li>
+                            <li>✓ Баталгаа: 3 сар</li>
+                            <li>✓ Хүргэлт: 7-14 хоног</li>
+                        </ul>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn-primary add-to-cart-modal">🛒 САГСАНД НЭМЭХ</button>
+                        <button class="btn-secondary buy-now">⚡ ШУУД ХУДАЛДАЖ АВАХ</button>
+                    </div>
+                    <div class="seller-info">
+                        <div class="seller-badge">
+                            <span>🏪</span>
+                            <div>
+                                <h5>Verified Seller</h5>
+                                <p>Japan Market Official</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Reviews Section -->
+            <div class="product-reviews-section">
+                <div class="reviews-header">
+                    <h3>⭐ Хэрэглэгчдийн үнэлгээ, сэтгэгдэл</h3>
+                    <button class="btn-write-review" onclick="openReviewModalFromDetail()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        Үнэлгээ бичих
+                    </button>
+                </div>
+
+                <div class="reviews-summary">
+                    <div class="summary-score">
+                        <div class="score-number" id="avgRating">4.8</div>
+                        <div class="score-stars" id="avgStars">⭐⭐⭐⭐⭐</div>
+                        <div class="score-count" id="totalReviewsCount">0 үнэлгээ</div>
+                    </div>
+                    <div class="summary-breakdown">
+                        <div class="rating-bar">
+                            <span class="bar-label">5 ⭐</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" id="rating5Bar" style="width: 75%"></div>
+                            </div>
+                            <span class="bar-count" id="rating5Count">15</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">4 ⭐</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" id="rating4Bar" style="width: 20%"></div>
+                            </div>
+                            <span class="bar-count" id="rating4Count">4</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">3 ⭐</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" id="rating3Bar" style="width: 5%"></div>
+                            </div>
+                            <span class="bar-count" id="rating3Count">1</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">2 ⭐</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" id="rating2Bar" style="width: 0%"></div>
+                            </div>
+                            <span class="bar-count" id="rating2Count">0</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">1 ⭐</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" id="rating1Bar" style="width: 0%"></div>
+                            </div>
+                            <span class="bar-count" id="rating1Count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-filters">
+                    <button class="review-filter-btn active" onclick="filterReviews('all')">
+                        Бүгд
+                    </button>
+                    <button class="review-filter-btn" onclick="filterReviews(5)">
+                        5 ⭐
+                    </button>
+                    <button class="review-filter-btn" onclick="filterReviews(4)">
+                        4 ⭐
+                    </button>
+                    <button class="review-filter-btn" onclick="filterReviews(3)">
+                        3 ⭐
+                    </button>
+                    <button class="review-filter-btn" onclick="filterReviews('images')">
+                        📷 Зурагтай
+                    </button>
+                </div>
+
+                <div class="reviews-list" id="productReviewsList">
+                    <!-- Reviews will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-widget">
+        <div class="chat-header">
+            <span>💬 Туслах</span>
+            <button id="closeChat">✕</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                <p>Сайн байна уу! 🇯🇵 Japan Market-д тавтай морилно уу! Танд хэрхэн туслах вэ?</p>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Асуулт бичих...">
+            <button id="sendChat">📤</button>
+        </div>
+    </div>
+    <button id="chatToggle" class="chat-toggle">💬</button>
+
+    <!-- Login/Register Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">🔐 НЭВТРЭХ</button>
+                <button class="auth-tab" data-tab="register">📝 БҮРТГҮҮЛЭХ</button>
+            </div>
+            
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form active">
+                <h2>🔐 Нэвтрэх</h2>
+                
+                <!-- Login Method Toggle -->
+                <div class="login-method-toggle">
+                    <button class="method-btn active" data-method="email" onclick="switchLoginMethod('email')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        И-мэйл
+                    </button>
+                    <button class="method-btn" data-method="phone" onclick="switchLoginMethod('phone')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Утас
+                    </button>
+                </div>
+
+                <!-- Email Login Form -->
+                <form id="emailLoginForm" onsubmit="handleLogin(event)" class="login-form-method active">
+                    <div class="input-group">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" placeholder="И-мэйл хаяг" required>
+                    </div>
+                    <div class="input-group">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <input type="password" placeholder="Нууц үг" required>
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Намайг сана</label>
+                    </div>
+                    <button type="submit" class="btn-primary auth-btn">🚀 НЭВТРЭХ</button>
+                    <a href="#" class="forgot-password">Нууц үг мартсан уу?</a>
+                </form>
+
+                <!-- Phone Login Form -->
+                <form id="phoneLoginForm" onsubmit="sendPhoneCode(event)" class="login-form-method">
+                    <div class="phone-login-step" id="phoneStep1">
+                        <div class="input-group phone-input">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <select class="country-code">
+                                <option value="+976">🇲🇳 +976</option>
+                                <option value="+86">🇨🇳 +86</option>
+                                <option value="+81">🇯🇵 +81</option>
+                                <option value="+82">🇰🇷 +82</option>
+                                <option value="+1">🇺🇸 +1</option>
+                            </select>
+                            <input type="tel" id="phoneNumber" placeholder="9999-9999" pattern="[0-9]{8}" required>
+                        </div>
+                        <div class="phone-info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            <p>Таны утсанд баталгаажуулах код илгээгдэх болно</p>
+                        </div>
+                        <button type="submit" class="btn-primary auth-btn">📱 КОД ИЛГЭЭХ</button>
+                    </div>
+
+                    <div class="phone-login-step" id="phoneStep2" style="display:none;">
+                        <div class="code-sent-message">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <h3>Код илгээгдлээ</h3>
+                            <p>Баталгаажуулах кодыг <strong id="sentPhoneNumber"></strong> дугаарт илгээлээ</p>
+                        </div>
+                        
+                        <div class="verification-code-input">
+                            <input type="text" maxlength="1" class="code-digit" data-index="0">
+                            <input type="text" maxlength="1" class="code-digit" data-index="1">
+                            <input type="text" maxlength="1" class="code-digit" data-index="2">
+                            <input type="text" maxlength="1" class="code-digit" data-index="3">
+                            <input type="text" maxlength="1" class="code-digit" data-index="4">
+                            <input type="text" maxlength="1" class="code-digit" data-index="5">
+                        </div>
+
+                        <div class="resend-code">
+                            <p id="codeTimer">Дахин илгээх: <span id="timerSeconds">60</span>с</p>
+                            <button type="button" class="link-btn" id="resendCodeBtn" onclick="resendPhoneCode()" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="1 4 1 10 7 10"></polyline>
+                                    <polyline points="23 20 23 14 17 14"></polyline>
+                                    <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+                                </svg>
+                                Дахин илгээх
+                            </button>
+                        </div>
+
+                        <button type="button" class="btn-primary auth-btn" onclick="verifyPhoneCode()">✅ БАТАЛГААЖУУЛАХ</button>
+                        <button type="button" class="btn-secondary auth-btn" onclick="backToPhoneStep1()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                            Буцах
+                        </button>
+                    </div>
+                </form>
+
+                <div class="social-login">
+                    <p>Эсвэл</p>
+                    <button class="social-btn google">🔍 Google-ээр нэвтрэх</button>
+                    <button class="social-btn facebook">📘 Facebook-ээр нэвтрэх</button>
+                </div>
+            </div>
+            
+            <!-- Register Form -->
+            <div id="registerForm" class="auth-form">
+                <h2>📝 Бүртгүүлэх</h2>
+                <form onsubmit="handleRegister(event)">
+                    <input type="text" placeholder="Нэр" required>
+                    <input type="email" placeholder="И-мэйл хаяг" required>
+                    <input type="tel" placeholder="Утасны дугаар" required>
+                    <input type="password" placeholder="Нууц үг" required>
+                    <input type="password" placeholder="Нууц үг давтах" required>
+                    <div class="terms-check">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Үйлчилгээний нөхцөл зөвшөөрөх</label>
+                    </div>
+                    <button type="submit" class="btn-primary auth-btn">✅ БҮРТГҮҮЛЭХ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Dashboard Modal -->
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal">&times;</span>
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=68" alt="User">
+                        <h3 id="userName">Болд Б.</h3>
+                        <p id="userEmail">bold@email.com</p>
+                    </div>
+                    <nav class="dashboard-nav">
+                        <button class="dash-nav-btn active" data-section="orders">📦 Захиалга</button>
+                        <button class="dash-nav-btn" data-section="wishlist">❤️ Хүсэл</button>
+                        <button class="dash-nav-btn" data-section="profile">👤 Профайл</button>
+                        <button class="dash-nav-btn" data-section="settings">⚙️ Тохиргоо</button>
+                        <button class="dash-nav-btn logout">🚪 Гарах</button>
+                    </nav>
+                </div>
+                <div class="dashboard-content">
+                    <div id="ordersSection" class="dashboard-section active">
+                        <h2>📦 Миний захиалга</h2>
+                        <div id="ordersList"></div>
+                    </div>
+                    <div id="wishlistSection" class="dashboard-section">
+                        <h2>❤️ Хүслийн жагсаалт</h2>
+                        <div id="wishlistGrid"></div>
+                    </div>
+                    <div id="profileSection" class="dashboard-section">
+                        <div style="text-align: center; padding: 3rem;">
+                            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 1.5rem; color: #667eea;">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <h2 style="color: #2d3748; margin-bottom: 1rem;">👤 Профайл хуудас</h2>
+                            <p style="color: #718096; margin-bottom: 2rem; font-size: 1.1rem;">
+                                Профайл хэсэг одоо тусдаа хуудсанд шилжсэн байна.
+                            </p>
+                            <button onclick="window.location.href='profile.html'" style="
+                                padding: 1rem 2rem;
+                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                color: white;
+                                border: none;
+                                border-radius: 10px;
+                                font-size: 1.1rem;
+                                font-weight: 700;
+                                cursor: pointer;
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                transition: all 0.3s ease;
+                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(102,126,234,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                ПРОФАЙЛ ХУУДАС ОЧИХ
+                            </button>
+                        </div>
+                    </div>
+                    <div id="settingsSection" class="dashboard-section">
+                        <h2>⚙️ Тохиргоо</h2>
+                                <div class="profile-avatar-section">
+                                    <div class="profile-avatar-wrapper">
+                                        <img src="https://i.pravatar.cc/150?img=68" alt="Profile" id="profilePhoto">
+                                        <button class="avatar-edit-btn" onclick="changeProfilePhoto()">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                                <circle cx="12" cy="13" r="4"></circle>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="profile-name-section">
+                                        <h2 id="profileName">Болд Б.</h2>
+                                        <p id="profileEmail">bold@email.com</p>
+                                        <div class="profile-badges">
+                                            <span class="verified-badge">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                                </svg>
+                                                Баталгаажсан
+                                            </span>
+                                            <span class="member-badge">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                                </svg>
+                                                Гишүүн: 2024
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="12" cy="7" r="4"></circle>
+                                            </svg>
+                                        </div>
+                                        <div class="stat-info">
+                                            <div class="stat-value">12</div>
+                                            <div class="stat-label">Захиалга</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="stat-info">
+                                            <div class="stat-value">5</div>
+                                            <div class="stat-label">Хадгалсан</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                            </svg>
+                                        </div>
+                                        <div class="stat-info">
+                                            <div class="stat-value">4.8</div>
+                                            <div class="stat-label">Үнэлгээ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-container">
+                            <form class="profile-form" onsubmit="saveProfile(event)">
+                                <!-- Basic Info Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <h3>Үндсэн мэдээлэл</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                        <circle cx="12" cy="7" r="4"></circle>
+                                                    </svg>
+                                                    Овог нэр *
+                                                </label>
+                                                <input type="text" name="fullName" placeholder="Жишээ: Болд Батаа" value="Болд Б." required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                                    </svg>
+                                                    Утасны дугаар *
+                                                </label>
+                                                <input type="tel" name="phone" placeholder="+976 9999-9999" value="+976 9999-9999" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    И-мэйл хаяг *
+                                                </label>
+                                                <input type="email" name="email" placeholder="example@email.com" value="bold@email.com" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                    Төрсөн огноо
+                                                </label>
+                                                <input type="date" name="birthdate" value="1990-01-01">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Address Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        <h3>Хаяг мэдээлэл</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                                    </svg>
+                                                    Хот/Аймаг *
+                                                </label>
+                                                <select name="city" required>
+                                                    <option value="">Сонгох</option>
+                                                    <option value="УБ" selected>Улаанбаатар</option>
+                                                    <option value="Дархан">Дархан</option>
+                                                    <option value="Эрдэнэт">Эрдэнэт</option>
+                                                    <option value="Хөвсгөл">Хөвсгөл</option>
+                                                    <option value="Завхан">Завхан</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                        <circle cx="12" cy="10" r="3"></circle>
+                                                    </svg>
+                                                    Дүүрэг/Сум *
+                                                </label>
+                                                <select name="district" required>
+                                                    <option value="">Сонгох</option>
+                                                    <option value="БГД">Баянгол</option>
+                                                    <option value="СБД" selected>Сүхбаатар</option>
+                                                    <option value="ХУД">Хан-Уул</option>
+                                                    <option value="ЧД">Чингэлтэй</option>
+                                                    <option value="БЗД">Баянзүрх</option>
+                                                    <option value="СХД">Сонгинохайрхан</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                                </svg>
+                                                Дэлгэрэнгүй хаяг *
+                                            </label>
+                                            <input type="text" name="address" placeholder="Хороо, байр, тоот, давхар, орц..." value="3-р хороо, 15-р байр" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                                </svg>
+                                                Нэмэлт хаяг
+                                            </label>
+                                            <input type="text" name="address2" placeholder="Нэмэлт хаяг мэдээлэл">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Interests Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                        </svg>
+                                        <h3>Сонирхлын чиглэл</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="interest-tags">
+                                            <label class="interest-tag">
+                                                <input type="checkbox" name="interest" value="electronics">
+                                                <span>📱 Электроникс</span>
+                                            </label>
+                                            <label class="interest-tag">
+                                                <input type="checkbox" name="interest" value="fashion">
+                                                <span>👕 Хувцас</span>
+                                            </label>
+                                            <label class="interest-tag">
+                                                <input type="checkbox" name="interest" value="auto">
+                                                <span>🚗 Автомашин</span>
+                                            </label>
+                                            <label class="interest-tag">
+                                                <input type="checkbox" name="interest" value="home">
+                                                <span>🏠 Гэр ахуй</span>
+                                            </label>
+                                            <label class="interest-tag">
+                                                <input type="checkbox" name="interest" value="hobby">
+                                                <span>🎮 Хобби</span>
+                                            </label>
+                                            <label class="interest-tag">
+                                                <input type="checkbox" name="interest" value="beauty">
+                                                <span>💄 Гоо сайхан</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Saved Addresses Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        <h3>Хадгалсан хаягууд</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="saved-addresses-list" id="savedAddressesList">
+                                            <div class="address-item default-address">
+                                                <div class="address-header">
+                                                    <div class="address-type">
+                                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                                        </svg>
+                                                        <strong>Гэр</strong>
+                                                    </div>
+                                                    <span class="default-badge">Үндсэн</span>
+                                                </div>
+                                                <div class="address-content">
+                                                    <p>Болд Б.</p>
+                                                    <p>+976 9999-9999</p>
+                                                    <p>Улаанбаатар, Сүхбаатар дүүрэг, 3-р хороо, 15-р байр</p>
+                                                </div>
+                                                <div class="address-actions">
+                                                    <button class="addr-btn-edit" onclick="editAddress(0)">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                        </svg>
+                                                        Засах
+                                                    </button>
+                                                    <button class="addr-btn-delete" onclick="deleteAddress(0)">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                        </svg>
+                                                        Устгах
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn-add-address" onclick="openAddAddressModal()">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                            Шинэ хаяг нэмэх
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Reward Points Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="8" r="7"></circle>
+                                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                        </svg>
+                                        <h3>Урамшууллын оноо</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="points-summary">
+                                            <div class="points-display">
+                                                <div class="points-icon">
+                                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                                    </svg>
+                                                </div>
+                                                <div class="points-info">
+                                                    <div class="points-value">2,450</div>
+                                                    <div class="points-label">Нийт оноо</div>
+                                                </div>
+                                            </div>
+                                            <div class="points-expiry">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg>
+                                                <p>500 оноо 30 хоногийн дараа дуусна</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="points-progress">
+                                            <div class="progress-header">
+                                                <span>Дараагийн түвшин хүртэл</span>
+                                                <span><strong>550</strong> оноо</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 78%"></div>
+                                            </div>
+                                            <div class="next-level">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                                </svg>
+                                                Алт түвшинд шилжих
+                                            </div>
+                                        </div>
+
+                                        <div class="points-benefits">
+                                            <h4>Онооны ашиглалт</h4>
+                                            <div class="benefit-item">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                </svg>
+                                                <span>100 оноо = 1,000₮ хөнгөлөлт</span>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                </svg>
+                                                <span>Захиалга бүрт 5% буцаан оноо</span>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                </svg>
+                                                <span>Төрсөн өдөр бонус 500 оноо</span>
+                                            </div>
+                                        </div>
+
+                                        <button class="btn-points-history" onclick="showPointsHistory()">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
+                                            Оноо түүх харах
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Notification Preferences Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                        </svg>
+                                        <h3>Мэдэгдлийн тохиргоо</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="notification-settings">
+                                            <div class="notif-section">
+                                                <h4>📧 И-мэйл мэдэгдэл</h4>
+                                                <div class="notif-item">
+                                                    <div class="notif-info">
+                                                        <strong>Захиалгын мэдээлэл</strong>
+                                                        <p>Захиалга, хүргэлтийн мэдээлэл хүлээн авах</p>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="notif-item">
+                                                    <div class="notif-info">
+                                                        <strong>Хямдрал, урамшуулал</strong>
+                                                        <p>Онцгой санал, хөнгөлөлтийн мэдээлэл</p>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="notif-item">
+                                                    <div class="notif-info">
+                                                        <strong>Шинэ бүтээгдэхүүн</strong>
+                                                        <p>Шинэ бараа нэмэгдсэн тухай мэдэгдэх</p>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notif-section">
+                                                <h4>📱 SMS мэдэгдэл</h4>
+                                                <div class="notif-item">
+                                                    <div class="notif-info">
+                                                        <strong>Хүргэлтийн мэдэгдэл</strong>
+                                                        <p>Хүргэгч хаяганд ойртох үед мэдэгдэх</p>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="notif-item">
+                                                    <div class="notif-info">
+                                                        <strong>Баталгаажуулалт</strong>
+                                                        <p>Нэвтрэх, нууц үг солих үед код илгээх</p>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="notif-section">
+                                                <h4>🔔 Browser мэдэгдэл</h4>
+                                                <div class="notif-item">
+                                                    <div class="notif-info">
+                                                        <strong>Push notification</strong>
+                                                        <p>Вэб хөтчөөр шууд мэдэгдэл авах</p>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Security Card -->
+                                <div class="profile-card">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        <h3>Нууцлал & Аюулгүй байдал</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="security-section">
+                                            <div class="security-item">
+                                                <div class="security-info">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                        <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                                                    </svg>
+                                                    <div>
+                                                        <strong>Нууц үг солих</strong>
+                                                        <p>Сүүлд солигдсон: 30 хоногийн өмнө</p>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="security-btn" onclick="changePassword()">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                    </svg>
+                                                    Солих
+                                                </button>
+                                            </div>
+                                            <div class="security-item">
+                                                <div class="security-info">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                                    </svg>
+                                                    <div>
+                                                        <strong>Хоёр үе шаттай баталгаажуулалт</strong>
+                                                        <p>Нэмэлт аюулгүй байдал</p>
+                                                    </div>
+                                                </div>
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                            <div class="security-item">
+                                                <div class="security-info">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                    <div>
+                                                        <strong>Нэвтрэх түүх</strong>
+                                                        <p>Сүүлд нэвтэрсэн: Өнөөдөр 14:30</p>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="security-btn" onclick="viewLoginHistory()">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                    Харах
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Form Actions -->
+                                <div class="form-actions">
+                                    <button type="button" class="btn-reset" onclick="resetProfile()">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="1 4 1 10 7 10"></polyline>
+                                            <polyline points="23 20 23 14 17 14"></polyline>
+                                            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+                                        </svg>
+                                        Буцаах
+                                    </button>
+                                    <button type="submit" class="btn-save">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                            <polyline points="7 3 7 8 15 8"></polyline>
+                                        </svg>
+                                        ХАДГАЛАХ
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="settingsSection" class="dashboard-section">
+                        <h2>⚙️ Тохиргоо</h2>
+                        <div class="settings-list">
+                            <div class="setting-item">
+                                <span>🔔 Мэдэгдэл</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <span>📧 И-мэйл мэдэгдэл</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <span>🌙 Харанхуй горим</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content review-modal-content">
+            <button class="close-modal" onclick="closeReviewModal()">&times;</button>
+            <div class="review-modal-header">
+                <h2>⭐ Үнэлгээ, сэтгэгдэл бичих</h2>
+                <p class="review-subtitle">Бүтээгдэхүүнийг хэрхэн үнэлэх вэ?</p>
+            </div>
+            
+            <!-- Product Info -->
+            <div class="review-product-info" id="reviewProductInfo">
+                <img src="" alt="Product" id="reviewProductImage">
+                <div class="review-product-details">
+                    <h4 id="reviewProductName">Бүтээгдэхүүний нэр</h4>
+                    <p id="reviewProductPrice">₮0</p>
+                </div>
+            </div>
+            
+            <form id="reviewForm" onsubmit="submitReview(event)">
+                <!-- Star Rating -->
+                <div class="review-section">
+                    <label class="review-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        Үнэлгээ өгөх
+                    </label>
+                    <div class="star-rating-container">
+                        <div class="star-rating" id="reviewStarRating">
+                            <span class="star-btn" data-rating="1">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </span>
+                            <span class="star-btn" data-rating="2">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </span>
+                            <span class="star-btn" data-rating="3">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </span>
+                            <span class="star-btn" data-rating="4">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </span>
+                            <span class="star-btn" data-rating="5">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9 27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </span>
+                        </div>
+                        <p class="rating-text" id="ratingText">Одыг дарж үнэлгээ өгнө үү</p>
+                    </div>
+                </div>
+
+                <!-- Review Text -->
+                <div class="review-section">
+                    <label class="review-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Сэтгэгдэл бичих
+                    </label>
+                    <textarea 
+                        id="reviewText" 
+                        placeholder="Бүтээгдэхүүний чанар, хүргэлт, үйлчилгээний талаар дэлгэрэнгүй бичнэ үү... (Багадаа 20 тэмдэгт)" 
+                        rows="6" 
+                        minlength="20"
+                        required
+                    ></textarea>
+                    <div class="review-tips">
+                        <p>💡 Зөвлөмж:</p>
+                        <ul>
+                            <li>✅ Бүтээгдэхүүний чанар, хэмжээ, өнгө</li>
+                            <li>✅ Хүргэлтийн хурд, баглаа боодол</li>
+                            <li>✅ Худалдагчийн үйлчилгээ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="review-section">
+                    <label class="review-label">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        Зураг оруулах <span style="color: #999; font-weight: 400;">(Заавал биш, хамгийн ихдээ 5 зураг)</span>
+                    </label>
+                    <div class="review-image-upload-area">
+                        <input type="file" id="reviewImageInput" accept="image/*" multiple max="5" style="display: none;">
+                        <button type="button" class="image-upload-btn" onclick="document.getElementById('reviewImageInput').click()">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <p>📷 Зураг оруулах</p>
+                            <span>PNG, JPG, GIF хүртэл 5MB</span>
+                        </button>
+                        <div id="reviewImagePreview" class="review-image-preview"></div>
+                    </div>
+                </div>
+
+                <!-- Anonymous Option -->
+                <div class="review-section">
+                    <label class="review-checkbox">
+                        <input type="checkbox" id="reviewAnonymous">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Нэрээ нууцлах (Нэргүй илгээх)
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="review-submit-actions">
+                    <button type="button" class="btn-cancel" onclick="closeReviewModal()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Болих
+                    </button>
+                    <button type="submit" class="btn-submit-review">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        Илгээх
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>💳 Төлбөр төлөх</h2>
+            <div class="payment-methods">
+                <button class="payment-method active" data-method="card">
+                    <span>💳</span>
+                    <span>Карт</span>
+                </button>
+                <button class="payment-method" data-method="bank">
+                    <span>🏦</span>
+                    <span>Дансанд</span>
+                </button>
+                <button class="payment-method" data-method="qpay">
+                    <span>📱</span>
+                    <span>QPay</span>
+                </button>
+                <button class="payment-method" data-method="social">
+                    <span>💰</span>
+                    <span>SocialPay</span>
+                </button>
+            </div>
+            
+            <div id="cardPayment" class="payment-form active">
+                <form>
+                    <input type="text" placeholder="Картын дугаар" pattern="[0-9]{16}" maxlength="16" required>
+                    <div class="card-details">
+                        <input type="text" placeholder="ММ/ЖЖ" pattern="[0-9]{2}/[0-9]{2}" maxlength="5" required>
+                        <input type="text" placeholder="CVV" pattern="[0-9]{3}" maxlength="3" required>
+                    </div>
+                    <input type="text" placeholder="Картын эзэмшигчийн нэр" required>
+                    <button type="submit" class="btn-primary">💳 ТӨЛБӨР ТӨЛӨХ</button>
+                </form>
+            </div>
+            
+            <div id="bankPayment" class="payment-form">
+                <div class="bank-info">
+                    <p><strong>Банк:</strong> Хаан Банк</p>
+                    <p><strong>Дансны дугаар:</strong> 5021234567</p>
+                    <p><strong>Эзэмшигч:</strong> Japan Market LLC</p>
+                    <p><strong>Утга:</strong> <span id="orderRef">JM123456</span></p>
+                    <button class="btn-secondary" onclick="copyBankDetails()">📋 ХУУЛАХ</button>
+                </div>
+            </div>
+            
+            <div id="qpayPayment" class="payment-form">
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=qpay://pay/12345" alt="QPay QR">
+                    <p>QPay апп-аар QR код уншуулна уу</p>
+                </div>
+            </div>
+            
+            <div id="socialPayment" class="payment-form">
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=socialpay://pay/12345" alt="SocialPay QR">
+                    <p>SocialPay апп-аар QR код уншуулна уу</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content search-modal">
+            <span class="close-modal">&times;</span>
+            
+            <!-- Search Header -->
+            <div class="search-header">
+                <div class="search-header-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <div class="search-header-text">
+                    <h2>Бараа хайх</h2>
+                    <p>18+ бараанаас хайлт хийх</p>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <!-- Modern Search Input -->
+                <div class="search-input-wrapper">
+                    <div class="search-input-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Жишээ нь: iPhone, Samsung, Camera..." autofocus oninput="handleSearchInput()" onkeydown="handleSearchKeydown(event)">
+                    <button class="clear-search-btn" onclick="clearSearchInput()" style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div id="searchAutocomplete" class="search-autocomplete" style="display:none;"></div>
+                </div>
+                
+                <!-- Search History -->
+                <div id="searchHistory" class="search-history" style="display:none;">
+                    <div class="search-history-header">
+                        <div class="history-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Сүүлд хайсан</span>
+                        </div>
+                        <button onclick="clearAllSearchHistory()" class="clear-all-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            </svg>
+                            Арилгах
+                        </button>
+                    </div>
+                    <div id="searchHistoryList"></div>
+                </div>
+
+                <!-- Active Filters Tags -->
+                <div id="activeFilters" class="active-filters" style="display:none;"></div>
+
+                <!-- Results Counter -->
+                <div id="resultsCounter" class="results-counter" style="display:none;"></div>
+                
+                <!-- Filters Section -->
+                <div class="search-filters-wrapper">
+                    <div class="filters-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                        <h3>Шүүлтүүд</h3>
+                    </div>
+                    
+                    <div class="search-filters">
+                        <!-- Category Filter -->
+                        <div class="filter-card">
+                            <label class="filter-card-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                                Ангилал
+                            </label>
+                            <select id="searchCategory" onchange="performSearch()">
+                                <option value="">Бүх ангилал</option>
+                                <option value="electronics">📱 Электроникс</option>
+                                <option value="fashion">👕 Хувцас</option>
+                                <option value="auto">🚗 Авто</option>
+                                <option value="home">🏠 Гэр ахуй</option>
+                                <option value="hobby">🎮 Хобби</option>
+                                <option value="beauty">💄 Гоо сайхан</option>
+                            </select>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="filter-card">
+                            <label class="filter-card-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                Үнэлгээ
+                            </label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="rating5" value="5" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>5⭐</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="rating4" value="4" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>4⭐+</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="rating3" value="3" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>3⭐+</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Condition Filter -->
+                        <div class="filter-card">
+                            <label class="filter-card-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                </svg>
+                                Байдал
+                            </label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="conditionNew" value="new" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>Шинэ</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="conditionUsed" value="used" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>Хуучин</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="conditionExcellent" value="excellent" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>Сайн</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Discount Filter -->
+                        <div class="filter-card">
+                            <label class="filter-card-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                Хямдрал
+                            </label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="hasDiscount" onchange="performSearch()">
+                                    <span class="checkbox-custom"></span>
+                                    <span>Хямдралтай барааг харуулах</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Range -->
+                        <div class="filter-card price-range-card">
+                            <label class="filter-card-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                Үнийн хязгаар
+                            </label>
+                            <div class="price-range">
+                                <input type="range" id="minPrice" min="0" max="5000000" step="50000" value="0" oninput="updatePriceValues(); performSearch();">
+                                <input type="range" id="maxPrice" min="0" max="5000000" step="50000" value="5000000" oninput="updatePriceValues(); performSearch();">
+                                <div class="price-values">
+                                    <span id="minPriceValue">₮0</span>
+                                    <span class="price-separator">—</span>
+                                    <span id="maxPriceValue">₮5,000,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sort Options -->
+                        <div class="filter-card">
+                            <label class="filter-card-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="4" y1="21" x2="4" y2="14"></line>
+                                    <line x1="4" y1="10" x2="4" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12" y2="3"></line>
+                                    <line x1="20" y1="21" x2="20" y2="16"></line>
+                                    <line x1="20" y1="12" x2="20" y2="3"></line>
+                                    <line x1="1" y1="14" x2="7" y2="14"></line>
+                                    <line x1="9" y1="8" x2="15" y2="8"></line>
+                                    <line x1="17" y1="16" x2="23" y2="16"></line>
+                                </svg>
+                                Эрэмбэлэх
+                            </label>
+                            <select id="sortBy" onchange="performSearch()">
+                                <option value="relevant">Холбогдолтой</option>
+                                <option value="price-low">Үнэ: Багаас их</option>
+                                <option value="price-high">Үнэ: Ихээс бага</option>
+                                <option value="rating">Үнэлгээ</option>
+                                <option value="newest">Шинэ эхэндээ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Results -->
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal">&times;</span>
+            <h2>👑 АДМИН САМБАР</h2>
+            
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="products">📦 БАРАА УДИРДАХ</button>
+                <button class="admin-tab" data-tab="add-product">➕ БАРАА НЭМЭХ</button>
+                <button class="admin-tab" data-tab="orders">📋 ЗАХИАЛГА</button>
+                <button class="admin-tab" data-tab="users">👥 ХЭРЭГЛЭГЧИД</button>
+                <button class="admin-tab" data-tab="stats">📊 СТАТИСТИК</button>
+            </div>
+
+            <!-- Products Management -->
+            <div id="adminProducts" class="admin-section active">
+                <div class="admin-header">
+                    <h3>📦 Барааны жагсаалт</h3>
+                    <div class="admin-filters">
+                        <select id="adminCategoryFilter">
+                            <option value="">Бүх ангилал</option>
+                            <option value="electronics">📱 Электроникс</option>
+                            <option value="fashion">👕 Хувцас</option>
+                            <option value="auto">🚗 Авто</option>
+                            <option value="home">🏠 Гэр ахуй</option>
+                            <option value="hobby">🎮 Хобби</option>
+                            <option value="beauty">💄 Гоо сайхан</option>
+                        </select>
+                        <input type="text" id="adminSearchProduct" placeholder="Бараа хайх...">
+                    </div>
+                </div>
+                <div id="adminProductsList" class="admin-products-list"></div>
+            </div>
+
+            <!-- Add Product Form -->
+            <div id="adminAddProduct" class="admin-section">
+                <h3>➕ Шинэ бараа нэмэх</h3>
+                <form id="addProductForm" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Барааны нэр (Монгол)</label>
+                            <input type="text" name="name" required placeholder="Жишээ: iPhone 14 Pro Max">
+                        </div>
+                        <div class="form-group">
+                            <label>Барааны нэр (Япон)</label>
+                            <input type="text" name="name_jp" required placeholder="例: アイフォン14プロマックス">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ангилал</label>
+                            <select name="category" required>
+                                <option value="">Сонгох</option>
+                                <option value="electronics">📱 Электроникс</option>
+                                <option value="fashion">👕 Хувцас</option>
+                                <option value="auto">🚗 Авто</option>
+                                <option value="home">🏠 Гэр ахуй</option>
+                                <option value="hobby">🎮 Хобби</option>
+                                <option value="beauty">💄 Гоо сайхан</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Badge</label>
+                            <select name="badge" required>
+                                <option value="hot">🔥 HOT</option>
+                                <option value="new">✨ NEW</option>
+                                <option value="sale">💰 SALE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Тайлбар</label>
+                        <textarea name="description" rows="4" required placeholder="Барааны дэлгэрэнгүй тайлбар..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Үнэ (₮)</label>
+                            <input type="number" name="price_tugrik" required placeholder="2450000" step="1000">
+                        </div>
+                        <div class="form-group">
+                            <label>Үнэ (¥)</label>
+                            <input type="number" name="price_yen" required placeholder="89800" step="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Хуучин үнэ (₮)</label>
+                            <input type="number" name="old_price" placeholder="3200000" step="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Нөөц</label>
+                            <input type="number" name="stock" required placeholder="5" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Нөхцөл</label>
+                            <select name="condition" required>
+                                <option value="New">Шинэ</option>
+                                <option value="Excellent">Маш сайн</option>
+                                <option value="Good">Сайн</option>
+                                <option value="Fair">Дунд</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Байршил</label>
+                            <input type="text" name="location" required placeholder="Tokyo, Japan">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Үнэлгээ (1-5)</label>
+                            <input type="number" name="rating" required min="1" max="5" value="5">
+                        </div>
+                        <div class="form-group">
+                            <label>Хөнгөлөлт (%)</label>
+                            <input type="number" name="discount_percent" placeholder="20" min="0" max="100">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>📸 Барааны зураг оруулах (JPG, PNG, GIF)</label>
+                        <div class="image-upload-section">
+                            <input type="file" id="productImages" accept="image/jpeg,image/png,image/gif,image/webp" multiple style="display:none;" onchange="handleImageUpload(event)">
+                            <button type="button" class="btn-upload" onclick="document.getElementById('productImages').click()">
+                                📁 Зураг сонгох
+                            </button>
+                            <small style="display:block; margin-top:0.5rem; color:#666;">
+                                💡 Дээд тал нь 4 зураг сонгож болно (JPG, PNG форматтай, 5MB хүртэл)
+                            </small>
+                        </div>
+                        
+                        <div id="imagePreview" class="image-preview-grid"></div>
+                        
+                        <div class="form-group" style="margin-top:1rem;">
+                            <label>🔗 Эсвэл холбоосоор нэмэх (4 ширхэг, comma-гаар тусгаарла)</label>
+                            <textarea id="imageUrlsInput" name="images" rows="3" placeholder="https://images.unsplash.com/photo-1.jpg, https://images.unsplash.com/photo-2.jpg, ..."></textarea>
+                            <small style="color:#666;">💡 File upload эсвэл URL холбоос ашиглана уу</small>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary admin-submit-btn">✅ БАРАА НЭМЭХ</button>
+                </form>
+            </div>
+
+            <!-- Orders Management -->
+            <div id="adminOrders" class="admin-section">
+                <h3>📋 Захиалгын жагсаалт</h3>
+                <div id="adminOrdersList" class="admin-orders-list"></div>
+            </div>
+
+            <!-- Users Management -->
+            <div id="adminUsers" class="admin-section">
+                <h3>👥 Хэрэглэгчид</h3>
+                <div id="adminUsersList" class="admin-users-list"></div>
+            </div>
+
+            <!-- Statistics -->
+            <div id="adminStats" class="admin-section">
+                <h3>📊 Статистик мэдээлэл</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-info">
+                            <h4 id="totalProducts">0</h4>
+                            <p>Нийт бараа</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🛒</div>
+                        <div class="stat-info">
+                            <h4 id="totalOrders">0</h4>
+                            <p>Захиалга</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h4 id="totalUsers">1</h4>
+                            <p>Хэрэглэгчид</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <h4 id="totalRevenue">₮0</h4>
+                            <p>Нийт орлого</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h4>📈 Сүүлийн 7 хоногийн борлуулалт</h4>
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Access Button (Hidden by default) -->
+    <button id="adminAccessBtn" class="admin-access-btn" style="display:none;" onclick="openAdminPanel()">
+        👑 АДМИН
+    </button>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content payment-modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>💳 Төлбөр төлөх</h2>
+            
+            <!-- Order Summary -->
+            <div class="payment-summary">
+                <h3>📋 Захиалгын дэлгэрэнгүй</h3>
+                <div class="summary-row">
+                    <span>Бараа:</span>
+                    <span id="paymentSubtotal">₮0</span>
+                </div>
+                <div class="summary-row" id="paymentDiscountRow" style="display:none;">
+                    <span>Хөнгөлөлт:</span>
+                    <span id="paymentDiscount" class="discount-text">-₮0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Хүргэлт:</span>
+                    <span id="paymentShipping">₮0</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Нийт төлбөр:</span>
+                    <span id="paymentTotal">₮0</span>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <h3>💰 Төлбөрийн хэлбэр сонгох</h3>
+                
+                <div class="payment-option">
+                    <input type="radio" id="cardPayment" name="paymentMethod" value="card" checked>
+                    <label for="cardPayment">
+                        <div class="payment-method-card">
+                            <div class="payment-icon">💳</div>
+                            <div class="payment-details">
+                                <h4>Картаар төлөх</h4>
+                                <p>Visa, MasterCard, UnionPay</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="qpayPayment" name="paymentMethod" value="qpay">
+                    <label for="qpayPayment">
+                        <div class="payment-method-card">
+                            <div class="payment-icon">📱</div>
+                            <div class="payment-details">
+                                <h4>QPay</h4>
+                                <p>Бүх банкны апп</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="bankPayment" name="paymentMethod" value="bank">
+                    <label for="bankPayment">
+                        <div class="payment-method-card">
+                            <div class="payment-icon">🏦</div>
+                            <div class="payment-details">
+                                <h4>Шилжүүлэг</h4>
+                                <p>Дансруу шууд шилжүүлэх</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="cashPayment" name="paymentMethod" value="cash">
+                    <label for="cashPayment">
+                        <div class="payment-method-card">
+                            <div class="payment-icon">💵</div>
+                            <div class="payment-details">
+                                <h4>Бэлнээр</h4>
+                                <p>Хүргэлтийн үед төлнө</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="socialPayment" name="paymentMethod" value="social">
+                    <label for="socialPayment">
+                        <div class="payment-method-card">
+                            <div class="payment-icon">🌐</div>
+                            <div class="payment-details">
+                                <h4>Social Pay</h4>
+                                <p>LendMN, Pocket</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Payment Forms (Dynamic) -->
+            <div id="paymentFormContainer"></div>
+
+            <!-- Action Buttons -->
+            <div class="payment-actions">
+                <button class="btn-secondary" onclick="closePaymentModal()">Буцах</button>
+                <button class="btn-primary" onclick="processPayment()">
+                    <span id="payBtnText">Төлбөр төлөх</span>
+                    <span id="payBtnAmount"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="japan_script.js"></script>
+</body>
+</html>
